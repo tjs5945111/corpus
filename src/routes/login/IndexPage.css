@@ -24,12 +24,17 @@
 }
 
 :global(.ant-form-item) {
-  margin: 2.2271rem 0px 0.9rem 2.5rem;
+  margin: 1rem 0px 0rem 2.7rem;
   color: #ffff;
 }
 
 :global(.ant-form) {
   background: #A6B9EC;
+  margin-top: 2.5rem;
+}
+
+:global(.ant-form-item-control-wrapper) {
+  min-height: 4.3rem;
 }
 
 :global(.ant-input) {
@@ -41,8 +46,8 @@
 
 .line {
   position: absolute;
-  top: -0.4604rem;
-  left: 13.5rem;
+  top: -0.35rem;
+  left: 14rem;
   width: 10px;
   height: 10px;
   border: 2.5px solid #ffff;
@@ -67,7 +72,7 @@
 .forgetcon {}
 
 .forget {
-  margin-right: 7rem;
+  margin-right: 7.5rem;
   cursor: pointer;
 }
 
@@ -87,7 +92,7 @@
   width: 9rem;
   height: 2.5rem;
   border-radius: 3rem;
-  margin-left: 6.5rem;
+  margin-left: 6.8rem;
   background: #00C8C4;
   border: none;
 }

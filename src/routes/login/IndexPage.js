@@ -26,29 +26,29 @@ function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
         <Form onSubmit={handleSubmit} className="login-form">
           <Form.Item>
             {getFieldDecorator('username', {
-              rules: [{ required: true, message: 'Please input your username!' }],
+              rules: [{ required: true, message: '请输入账号!' }],
             })(
               <Input
                 prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                placeholder="Username"
+                placeholder="请输入账号"
                 size="small"
               />,
             )}
           </Form.Item>
           <Form.Item>
             {getFieldDecorator('password', {
-              rules: [{ required: true, message: 'Please input your Password!' }],
+              rules: [{ required: true, message: '请输入密码!' }],
             })(
               <Input
                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                 type="password"
-                placeholder="Password"
+                placeholder="请输入密码"
               />,
             )}
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" className={styles.loginformbutton}>
-              Log in
+              登录
           </Button>
           </Form.Item>
           <Form.Item className={styles.forgetitem}>
