@@ -13,7 +13,7 @@ export default {
   effects: {
     // 路由跳转
     * checkLogin({ payload }, { put }) {
-      yield put(routerRedux.push('/pc'));
+      yield put(routerRedux.push('/pc/source/system'));
     },
   },
 
