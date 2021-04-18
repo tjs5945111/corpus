@@ -3,9 +3,9 @@ import { connect } from 'dva';
 import { Link } from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import titleImg from '../../assets/images/title.png';
-import styles from './IndexPage.css';
+import styles from './RetrievePage.css';
 
-function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
+function RetrievePage({ dispatch, form: { getFieldDecorator, validateFields } }) {
   const [type, setType] = useState('login');
   function handleSubmit(e) {
     e.preventDefault()
@@ -33,7 +33,7 @@ function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
       <img src={titleImg} className={styles.img}></img>
       {
         type === 'login' ? <div>
-          <h3 className={styles.title}>欢迎登录！</h3>
+          <h3 className={styles.title}>欢迎！</h3>
           <div className={styles.normal}>
             <div className={styles.line}></div>
             <Form onSubmit={handleSubmit} className="login-form">
@@ -143,4 +143,4 @@ function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
 // IndexPage.propTypes = {
 // };
 //用于连接模板文件与models文件
-export default connect()(Form.create()(IndexPage));
+export default connect()(Form.create()(RetrievePage));
