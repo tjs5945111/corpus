@@ -1,28 +1,93 @@
-.loginconter{
-    width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.loginconter {
+  width: 100%;
+  height: 100%;
+  background-color: #8AA3E6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.img {
+  width: 42.6563rem;
+  height: 7.6563rem;
+}
+
 .normal {
-    font-family: Georgia, sans-serif;
-    width: 310px;
-    height: 310px;
-    padding: 10px;
-    box-shadow: 0 0 8px #d1d0d0;
+  position: relative;
+  margin-right: 6rem;
+  width: 28rem;
+  padding: 0.5208rem;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 100);
+  box-shadow: 0 0 8px #9aaee7;
+  background: #A6B9EC;
+}
+
+:global(.ant-form-item) {
+  margin: 2.2271rem 0px 0.9rem 2.5rem;
+  color: #ffff;
+}
+
+:global(.ant-form) {
+  background: #A6B9EC;
+}
+
+:global(.ant-input) {
+  width: 21.75rem;
+  height: 2.3958rem;
+  border-radius: 3.125rem;
+  border: 1px solid #ffff;
+}
+
+.line {
+  position: absolute;
+  top: -0.4604rem;
+  left: 13.5rem;
+  width: 10px;
+  height: 10px;
+  border: 2.5px solid #ffff;
+  border-radius: 3px;
+  -webkit-animation: run 3s linear 0s infinite;
+}
+
+@-webkit-keyframes run {
+  from {
+    -webkit-transform: rotate(0deg);
   }
-  .headtitle{
-      text-align: center;
-      font-size: 14px;
-      margin-bottom: 10px;
+
+  to {
+    -webkit-transform: rotate(360deg);
   }
- .loginform {
-    max-width: 300px;
-  }
+}
+
+.loginform {
+  max-width: 300px;
+}
+
+.forgetcon {}
+
+.forget {
+  margin-right: 7rem;
+  cursor: pointer;
+}
+
 .loginformforgot {
-    float: right;
-  }
- .loginformbutton {
-    width: 100%;
-  }
+  float: right;
+}
+
+.zc a {
+  margin-left: 4px;
+}
+
+.forgetitem {
+  margin-top: 0px;
+}
+
+.loginformbutton {
+  width: 9rem;
+  height: 2.5rem;
+  border-radius: 3rem;
+  margin-left: 6.5rem;
+  background: #00C8C4;
+  border: none;
+}
