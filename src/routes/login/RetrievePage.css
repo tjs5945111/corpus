@@ -3,7 +3,7 @@
   height: 100%;
   background-color: #8AA3E6;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -16,6 +16,7 @@
 .img {
   width: 42.6563rem;
   height: 7.6563rem;
+  margin: 3rem 0 4rem;
 }
 
 .normal {
@@ -48,6 +49,17 @@
   height: 2.3958rem;
   border-radius: 3.125rem;
   border: 1px solid #ffff;
+}
+
+:global(.yzm .ant-input) {
+  width: 12.75rem;
+  height: 2.3958rem;
+  border-radius: 3px;
+  border: 1px solid #ffff;
+}
+
+.yzm {
+  display: flex;
 }
 
 .line {
@@ -101,8 +113,15 @@
 .loginformbutton {
   width: 21.75rem;
   height: 2.5rem;
-  border-radius: 3rem;
+  border-radius: 3px;
   /* margin-left: 6.8rem; */
-  background: #00C8C4;
+  background: #F45809;
+  border: none;
+}
+
+.loginformbuttons {
+  width: 9.75rem;
+  height: 2.5rem;
+  border-radius: 3px;
   border: none;
 }
