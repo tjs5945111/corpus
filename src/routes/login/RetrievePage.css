@@ -29,6 +29,7 @@
   background: #A6B9EC;
 }
 
+/* 
 :global(.ant-form-item) {
   margin: 1rem 0px 0rem 2.7rem;
   color: #ffff;
@@ -48,7 +49,7 @@
   height: 2.3958rem;
   border-radius: 3.125rem;
   border: 1px solid #ffff;
-}
+} */
 
 :global(.yzm .ant-input) {
   width: 12.75rem;

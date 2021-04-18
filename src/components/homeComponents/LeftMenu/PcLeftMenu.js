@@ -27,7 +27,7 @@ const PcLeftMenu = (props) => {
                     title={<span><Icon type="file" /><span className="nav-text">控制管理</span></span>}
                 >
                     <Menu.Item key='system'><Link to='/pc/source/system'>系统</Link></Menu.Item>
-                    <Menu.Item key='sysSearch'><Link to='/pc/source/topic'>高级检索</Link></Menu.Item>
+                    <Menu.Item key='sysSearch'><Link to='/pc/source/service'>高级检索</Link></Menu.Item>
                 </SubMenu>
                 <SubMenu
                     key='list'
