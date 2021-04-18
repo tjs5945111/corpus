@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { Link } from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import titleImg from '../../assets/images/title.png';
-import styles from './IndexPage.css';
+import styles from './IndexPage.less';
 
 function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
   const [type, setType] = useState('login');

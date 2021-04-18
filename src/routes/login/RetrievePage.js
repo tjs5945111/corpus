@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { Link } from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import titleImg from '../../assets/images/title.png';
-import styles from './RetrievePage.css';
+import styles from './RetrievePage.less';
 
 function RetrievePage({ dispatch, form: { getFieldDecorator, validateFields }, history }) {
   const [type, setType] = useState('find');
