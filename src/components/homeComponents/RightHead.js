@@ -30,10 +30,7 @@ const RightHead = (props) => {
                 style={{ position: "relative", top: "-56px", width: "950px", left: "30px" }}
             >
                 <Menu.Item key='pc'>
-                    <Icon type='home' /><span>首页</span>
-                </Menu.Item>
-                <Menu.Item key='mobile'>
-                    <Icon type='mobile' /><span>移动</span>
+                    <Icon type='home' /><span>洋腔洋调语音预料库</span>
                 </Menu.Item>
             </Menu>
         </Header>
