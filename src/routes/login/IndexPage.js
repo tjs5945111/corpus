@@ -128,9 +128,14 @@ function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
                   )}
                 </Form.Item>
                 <Form.Item>
-                  <Button type="primary" htmlType="submit" className={styles.loginformbutton}>
-                    立即注册
-            </Button>
+                  <div style={{ display: "flex", justifyContent: 'space-between' }}>
+                    <Button type="primary" htmlType="submit" style={{ background: "#F45809" }} className={styles.loginformbuttons}>
+                      立即注册
+                  </Button>
+                    <Button className={styles.loginformbuttons} style={{ marginRight: '2.5rem' }} onClick={() => setType('login')}>
+                      取消
+                    </Button>
+                  </div>
                 </Form.Item>
               </Form>
             </div>

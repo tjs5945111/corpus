@@ -106,3 +106,10 @@
   background: #00C8C4;
   border: none;
 }
+
+.loginformbuttons {
+  width: 9.75rem;
+  height: 2.5rem;
+  border-radius: 3px;
+  border: none;
+}
