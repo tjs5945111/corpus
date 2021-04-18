@@ -29,21 +29,21 @@
   background: #A6B9EC;
 }
 
-:global(.loginconter .ant-form-item) {
+:global(.ant-form-item) {
   margin: 1rem 0px 0rem 2.7rem;
   color: #ffff;
 }
 
-:global(.loginconter .ant-form) {
+:global(.ant-form) {
   background: #A6B9EC;
   margin-top: 2.5rem;
 }
 
-:global(.loginconter .ant-form-item-control-wrapper) {
+:global(.ant-form-item-control-wrapper) {
   min-height: 4.3rem;
 }
 
-:global(.loginconter .ant-input) {
+:global(.ant-input) {
   width: 21.75rem;
   height: 2.3958rem;
   border-radius: 3.125rem;
