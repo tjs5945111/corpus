@@ -51,6 +51,30 @@ const DataContentCompontent = (props) => {
             {/* 模型关系依赖图 */}
             <EchartWebKit backData={mockData} />
           </div>
+          <div>
+            <h3>国家地区</h3>
+            <p style={{ marginLeft: '8px' }}><Icon type="right" />总体趋势分析</p>
+            <EchartsLin backData={backData}
+              xtitle="date" />
+            {/* 模型关系依赖图 */}
+            <EchartWebKit backData={mockData} />
+          </div>
+          <div>
+            <h3>国家地区</h3>
+            <p style={{ marginLeft: '8px' }}><Icon type="right" />总体趋势分析</p>
+            <EchartsLin backData={backData}
+              xtitle="date" />
+            {/* 模型关系依赖图 */}
+            <EchartWebKit backData={mockData} />
+          </div>
+          <div>
+            <h3>国家地区</h3>
+            <p style={{ marginLeft: '8px' }}><Icon type="right" />总体趋势分析</p>
+            <EchartsLin backData={backData}
+              xtitle="date" />
+            {/* 模型关系依赖图 */}
+            <EchartWebKit backData={mockData} />
+          </div>
         </Card>
       </div>
     </Card>
