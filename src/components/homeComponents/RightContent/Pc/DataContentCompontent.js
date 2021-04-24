@@ -2,6 +2,9 @@
 import React from 'react';
 import { Card, List, Icon, Divider, Checkbox } from 'antd';
 import EchartsLin from './Component/EchartsLin'
+import EchartWebKit from './Component/EchartWebKit'
+import * as mockData from './Component/mock.json'
+
 const backData = [{ cleanAmount: 1, date: '2012-1-1' }, { cleanAmount: 2, date: '2013-1-2' }, { cleanAmount: 3, date: '2021-3-5' },]
 const data = [
   'Racing ',
@@ -45,10 +48,11 @@ const DataContentCompontent = (props) => {
             <p style={{ marginLeft: '8px' }}><Icon type="right" />总体趋势分析</p>
             <EchartsLin backData={backData}
               xtitle="date" />
+            {/* 模型关系依赖图 */}
+            <EchartWebKit backData={mockData} />
           </div>
         </Card>
       </div>
-
     </Card>
   );
 
