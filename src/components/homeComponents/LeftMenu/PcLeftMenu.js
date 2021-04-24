@@ -12,7 +12,7 @@ const PcLeftMenu = (props) => {
     const [openKey, openChange] = useState([]);
     const { collapsed } = props
     return (
-        <Sider trigger={null} collapsible collapsed={collapsed}  >
+        <Sider trigger={null} collapsible collapsed={collapsed} style={{ minHeight: '100vh' }} >
             <div style={{ color: '#fff', textAlign: 'center', padding: "3px", fontSize: "18px" }} >{collapsed ? '' : "语音预料系统"}</div>
             <Menu
                 theme="dark"

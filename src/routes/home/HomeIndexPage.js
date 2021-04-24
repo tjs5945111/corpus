@@ -19,7 +19,7 @@ function HomeIndexPage({ dispatch }) {
   }
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout>
       {/* 左边栏 (待改进=>根据设备的选择加载对应的组件 通过子组件传递的参数判断)*/}
       { _props.keyss === 'pc' ? <PcLeftMenu {..._props}></PcLeftMenu> : <MoblieLeftMenu></MoblieLeftMenu>}
       <Layout>

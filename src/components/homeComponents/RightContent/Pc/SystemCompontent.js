@@ -26,187 +26,198 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
         <Card style={{ marginBottom: "20px" }}>
           <h3>高级检索</h3>
           <Divider />
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('username', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
+          <div style={{ display: 'flex', flexWrap: "wrap" }}>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('username', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+
+          </div>
         </Card>
 
         <Card style={{ marginBottom: "20px" }}>
           <h3>高级检索</h3>
           <Divider />
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('username', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-        </Card>
+          <div style={{ display: 'flex', flexWrap: "wrap" }}>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('username', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
 
+          </div>
+        </Card>
         <Card style={{ marginBottom: "20px" }}>
           <h3>高级检索</h3>
           <Divider />
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('username', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-        </Card>
+          <div style={{ display: 'flex', flexWrap: "wrap" }}>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('username', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
 
+          </div>
+        </Card>
         <Card style={{ marginBottom: "20px" }}>
           <h3>高级检索</h3>
           <Divider />
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('username', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-          <Form.Item label='国家地区'>
-            {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入!' }],
-            })(
-              <Input
-                type="password"
-                placeholder="请输入"
-              />,
-            )}
-          </Form.Item>
-        </Card>
+          <div style={{ display: 'flex', flexWrap: "wrap" }}>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('username', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='国家地区'>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
 
-        <Form.Item>
-          <Button type="primary" htmlType="submit" className={styles.loginformbutton}>
-            重置
+          </div>
+        </Card>
+        <Card className={styles.search}>
+          <Form.Item style={{ width: '100%' }}>
+            <Button htmlType="submit" className={styles.button}>
+              重置
               </Button>
-          <Button type="primary" htmlType="submit" className={styles.loginformbutton}>
-            检索
+            <Button type="primary" htmlType="submit" className={styles.button}>
+              检索
               </Button>
-        </Form.Item>
+          </Form.Item>
+        </Card>
       </Form>
 
     </div>
