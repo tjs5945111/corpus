@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Card, List, Icon, Divider, Checkbox } from 'antd';
-
+import EchartsLin from './Component/EchartsLin'
+const backData = [{ cleanAmount: 1, date: '2012-1-1' }, { cleanAmount: 2, date: '2013-1-2' }, { cleanAmount: 3, date: '2021-3-5' },]
 const data = [
   'Racing ',
   'Japanese',
@@ -42,6 +43,8 @@ const DataContentCompontent = (props) => {
           <div>
             <h3>国家地区</h3>
             <p style={{ marginLeft: '8px' }}><Icon type="right" />总体趋势分析</p>
+            <EchartsLin backData={backData}
+              xtitle="date" />
           </div>
         </Card>
       </div>
