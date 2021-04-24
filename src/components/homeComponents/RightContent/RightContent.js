@@ -16,7 +16,7 @@ const { Content } = Layout;
 const RightContent = (props) => {
 
   return (
-    <Content style={{ margin: '24px 16px', padding: 15, overflowY: "scroll", height: '36rem' }} >
+    <Content style={{ margin: '24px 16px', padding: 15, overflowY: "scroll", height: '33rem' }} >
       <Switch>
         <Route path={`/pc/source/system`} component={SystemCompontent} />
         <Route path={`/pc/source/service`} component={ServiceCompontent} />

@@ -26,14 +26,14 @@ const PcLeftMenu = (props) => {
                     key='search'
                     title={<span><Icon type="file" /><span className="nav-text">控制管理</span></span>}
                 >
-                    <Menu.Item key='system'><Link to='/pc/source/system'>系统</Link></Menu.Item>
+                    <Menu.Item key='system'><Link to='/pc/source/system'>基本信息检索</Link></Menu.Item>
                     <Menu.Item key='sysSearch'><Link to='/pc/source/service'>高级检索</Link></Menu.Item>
                 </SubMenu>
                 <SubMenu
                     key='list'
                     title={<span><Icon type="file" /><span className="nav-text">资源管理</span></span>}
                 >
-                    <Menu.Item key='/pc/source/topic'><Link to='/pc/source/topic'>资源列表</Link></Menu.Item>
+                    <Menu.Item key='/pc/source/topic'><Link to='/pc/source/topic'>语音语料列表</Link></Menu.Item>
                     <Menu.Item key='/pc/source/dataContent'><Link to='/pc/source/dataContent'>数据可视化</Link></Menu.Item>
                 </SubMenu>
 
