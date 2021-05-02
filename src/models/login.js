@@ -30,8 +30,8 @@ export default {
       //   // err
       // })
       //调用引入的数据请求函数
-      const params = { tableName: 'text_trace', query }
-      const result = yield call(queryAll, params);//如果使用  {参数}  ，则是一个对象
+      // const params = { tableName: 'text_trace', query }
+      // const result = yield call(queryAll, params);//如果使用  {参数}  ，则是一个对象
       yield put(routerRedux.push('/pc/source/system'));
     },
   },

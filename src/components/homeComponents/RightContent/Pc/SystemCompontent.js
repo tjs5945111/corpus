@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'dva';
-import { Form, Icon, Input, Button, Divider, Collapse, Card } from 'antd';
+import { Form, Icon, Input, Button, Divider, Collapse, Card, Select, InputNumber, DatePicker } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './system.less';
 
 const { Panel } = Collapse;
+const { Option } = Select;
+const { RangePicker } = DatePicker;
 
 const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields } }) => {
   const [type, setType] = useState('login');
@@ -27,8 +29,8 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
           <h3>高级检索</h3>
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('username', {
+            <Form.Item label='母语'>
+              {getFieldDecorator('language', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
                 <Input
@@ -37,31 +39,97 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
               )}
             </Form.Item>
             <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+              {getFieldDecorator('country', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
                 <Input
-                  type="password"
                   placeholder="请输入"
                 />,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+
+            <Form.Item label='HSK水平'>
+              {getFieldDecorator('hskLevel', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
                 <Input
-                  type="password"
                   placeholder="请输入"
                 />,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+
+            <Form.Item label='语种'>
+              {getFieldDecorator('languageFamily', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
                 <Input
-                  type="password"
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='是否为华裔'>
+              {getFieldDecorator('chineseOrigin_generation', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='是否学习过汉语'>
+              {getFieldDecorator(' chineseLearning', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='性别'>
+              {getFieldDecorator('gender', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Select placeholder="请选择！">
+                  <Option value='男'>男</Option>
+                  <Option value='女'>女</Option>
+                </Select>
+              )}
+            </Form.Item>
+
+            <Form.Item label='是否学习过汉语'>
+              {getFieldDecorator(' chineseLearning', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='汉语学习方式'>
+              {getFieldDecorator(' method', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item label='年龄'>
+              {getFieldDecorator('age', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
+                  placeholder="请输入"
+                />,
+              )}
+            </Form.Item>
+
+
+            <Form.Item label='其他外语及程度'>
+              {getFieldDecorator(' chineseOrigin_generation', {
+                rules: [{ required: true, message: '请输入!' }],
+              })(
+                <Input
                   placeholder="请输入"
                 />,
               )}
@@ -71,138 +139,134 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
         </Card>
 
         <Card style={{ marginBottom: "20px" }}>
-          <h3>高级检索</h3>
+          <h3>语音内容</h3>
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('username', {
+            <Form.Item label='内容'>
+              {getFieldDecorator('content', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  placeholder="请输入"
-                />,
+                <Select placeholder="请选择">
+                  <Option value='text_material'>文本朗读</Option>
+                  {/* <Option value='cartoon_material'>卡通</Option>
+                  <Option value='speech_material'>演讲</Option>
+                  <Option value='talk_material'>报告</Option> */}
+                </Select>
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+            <Form.Item label='主题'>
+              {getFieldDecorator('material', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
-                />,
+                <Select placeholder="请选择">
+                  <Option value='text_material'>文本朗读</Option>
+                  <Option value='cartoon_material'>卡通</Option>
+                  <Option value='speech_material'>演讲</Option>
+                  <Option value='talk_material'>报告</Option>
+                </Select>
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+
+            <Form.Item label='语言要素'>
+              {getFieldDecorator('language', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
-                />,
-              )}
-            </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
-                rules: [{ required: true, message: '请输入!' }],
-              })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
-                />,
+                <Select placeholder="请选择">
+                  <Option value='word'>词汇</Option>
+                </Select>
               )}
             </Form.Item>
 
           </div>
         </Card>
         <Card style={{ marginBottom: "20px" }}>
-          <h3>高级检索</h3>
+          <h3>评测指标</h3>
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('username', {
+            <Form.Item label='流畅度'>
+              {getFieldDecorator('a', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  placeholder="请输入"
+                <InputNumber
+                  placeholder="请输入0-100的数字"
                 />,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+            <Form.Item label='精准度'>
+              {getFieldDecorator('b', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
+                <InputNumber
+                  placeholder="请输入0-100的数字"
                 />,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+            <Form.Item label='完成度'>
+              {getFieldDecorator('c', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
-                />,
-              )}
-            </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
-                rules: [{ required: true, message: '请输入!' }],
-              })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
+                <InputNumber
+                  placeholder="请输入0-100的数字"
                 />,
               )}
             </Form.Item>
 
           </div>
         </Card>
+
         <Card style={{ marginBottom: "20px" }}>
-          <h3>高级检索</h3>
+          <h3>发音质量</h3>
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('username', {
+            <Form.Item label='语调'>
+              {getFieldDecorator('c', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  placeholder="请输入"
+                <InputNumber
+                  placeholder="请输入0-100的数字"
                 />,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+            <Form.Item label='高音'>
+              {getFieldDecorator('d', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
+                <InputNumber
+                  placeholder="请输入0-100的数字"
                 />,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+
+          </div>
+        </Card>
+
+        <Card style={{ marginBottom: "20px" }}>
+          <h3>形式检索</h3>
+          <Divider />
+          <div style={{ display: 'flex', flexWrap: "wrap" }}>
+            <Form.Item label='形式'>
+              {getFieldDecorator('type', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
-                />,
+                <Select
+                  mode="multiple"
+                  style={{ width: '100%' }}
+                  placeholder="请选择，可多选。"
+                // defaultValue={['a10', 'c12']}
+                // onChange={handleChange}
+                >
+                  <Option value='text_material'>文本</Option>
+                  <Option value='cartoon_material'>配音</Option>
+                  <Option value='speech_material'>演讲</Option>
+                  <Option value='talk_material'>话题</Option>
+                </Select>,
               )}
             </Form.Item>
-            <Form.Item label='国家地区'>
-              {getFieldDecorator('password', {
+            <Form.Item label='时间范围'>
+              {getFieldDecorator('time', {
                 rules: [{ required: true, message: '请输入!' }],
               })(
-                <Input
-                  type="password"
-                  placeholder="请输入"
-                />,
+                <RangePicker > </RangePicker>,
               )}
             </Form.Item>
 
