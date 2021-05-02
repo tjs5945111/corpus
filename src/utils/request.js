@@ -37,10 +37,9 @@ export default function baseQuest(params) {
   // let query = new BaaS.Query()
   // 应用查询对象
   let Product = new BaaS.TableObject(tableName);
-  debugger;
   return Product.setQuery(params.query).find()
-    // .then(checkStatus)
-    // .then(parseJSON)
+    .then(checkStatus)
+    .then(parseJSON)
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }

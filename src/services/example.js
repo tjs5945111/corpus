@@ -5,6 +5,6 @@ export function query() {
   return request('/api/users');
 }
 
-export function queryAll(tableName, params) {
-  return baseQuest(tableName, params);
+export function queryAll(params) {
+  return baseQuest(params);
 }
