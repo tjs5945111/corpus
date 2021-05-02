@@ -8,8 +8,8 @@ const { Panel } = Collapse;
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 
-const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields } }) => {
-  const [type, setType] = useState('login');
+const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields, resetFields } }) => {
+  const [searchParams, setSearchParams] = useState({});
   function callback(key) {
     console.log(key);
   }
@@ -18,7 +18,11 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
     validateFields((err, values) => {
       console.log(err)
       if (!err) {
-
+        debugger
+        dispatch({
+          type: 'all/mainSearch',
+          payload: values
+        })
       }
     })
   }
@@ -168,7 +172,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
 
             <Form.Item label='语言要素'>
-              {getFieldDecorator('language', {
+              {getFieldDecorator('languages', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
@@ -274,7 +278,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
         </Card>
         <Card className={styles.search}>
           <Form.Item style={{ width: '100%' }}>
-            <Button htmlType="submit" className={styles.button}>
+            <Button className={styles.button} onClick={() => resetFields()}>
               重置
               </Button>
             <Button type="primary" htmlType="submit" className={styles.button}>

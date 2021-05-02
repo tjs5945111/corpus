@@ -2,6 +2,7 @@ import dva from 'dva';
 import BaaS from 'minapp-sdk';
 import './index.css';
 import login from './models/login';
+import all from './models/all';
 
 // import createLoading from 'dva-loading';
 
@@ -16,6 +17,7 @@ const app = dva();
 // 3. Model
 app.model(require('./models/example').default);
 app.model(login);
+app.model(all);
 
 // 4. Router
 app.router(require('./router').default);
