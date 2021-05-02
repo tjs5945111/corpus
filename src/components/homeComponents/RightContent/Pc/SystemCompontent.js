@@ -31,7 +31,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='母语'>
               {getFieldDecorator('language', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -40,7 +40,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='国家地区'>
               {getFieldDecorator('country', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -50,7 +50,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
 
             <Form.Item label='HSK水平'>
               {getFieldDecorator('hskLevel', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -60,7 +60,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
 
             <Form.Item label='语种'>
               {getFieldDecorator('languageFamily', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -69,7 +69,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='是否为华裔'>
               {getFieldDecorator('chineseOrigin_generation', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -78,7 +78,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='是否学习过汉语'>
               {getFieldDecorator(' chineseLearning', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -87,7 +87,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='性别'>
               {getFieldDecorator('gender', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择！">
                   <Option value='男'>男</Option>
@@ -98,7 +98,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
 
             <Form.Item label='是否学习过汉语'>
               {getFieldDecorator(' chineseLearning', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -107,7 +107,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='汉语学习方式'>
               {getFieldDecorator(' method', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -116,7 +116,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='年龄'>
               {getFieldDecorator('age', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -127,7 +127,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
 
             <Form.Item label='其他外语及程度'>
               {getFieldDecorator(' chineseOrigin_generation', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
                   placeholder="请输入"
@@ -144,7 +144,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='内容'>
               {getFieldDecorator('content', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
                   <Option value='text_material'>文本朗读</Option>
@@ -156,7 +156,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='主题'>
               {getFieldDecorator('material', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
                   <Option value='text_material'>文本朗读</Option>
@@ -169,7 +169,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
 
             <Form.Item label='语言要素'>
               {getFieldDecorator('language', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
                   <Option value='word'>词汇</Option>
@@ -185,7 +185,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='流畅度'>
               {getFieldDecorator('a', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber
                   placeholder="请输入0-100的数字"
@@ -194,7 +194,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='精准度'>
               {getFieldDecorator('b', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber
                   placeholder="请输入0-100的数字"
@@ -203,7 +203,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='完成度'>
               {getFieldDecorator('c', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber
                   placeholder="请输入0-100的数字"
@@ -220,7 +220,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='语调'>
               {getFieldDecorator('c', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber
                   placeholder="请输入0-100的数字"
@@ -229,7 +229,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='高音'>
               {getFieldDecorator('d', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber
                   placeholder="请输入0-100的数字"
@@ -246,7 +246,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='形式'>
               {getFieldDecorator('type', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select
                   mode="multiple"
@@ -264,7 +264,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields 
             </Form.Item>
             <Form.Item label='时间范围'>
               {getFieldDecorator('time', {
-                rules: [{ required: true, message: '请输入!' }],
+                rules: [{ required: false, message: '请输入!' }],
               })(
                 <RangePicker > </RangePicker>,
               )}
