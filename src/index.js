@@ -1,7 +1,11 @@
 import dva from 'dva';
+import BaaS from 'minapp-sdk';
 import './index.css';
-import login from './models/login'
+import login from './models/login';
+
 // import createLoading from 'dva-loading';
+
+BaaS.init('b74475f7389a8d7ead6c');
 
 // 1. Initialize
 const app = dva();
