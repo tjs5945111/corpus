@@ -1,19 +1,28 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'dva';
 import { Card, Input, Button, Divider } from 'antd';
 
 const { TextArea } = Input;
 
 const ServiceCompontent = (props) => {
 
+  const [value, setValue] = useState('');
+  function handleSearch() {
+    value && props.dispatch({
+      type: 'all/mainSearch',
+      payload: { value }
+    })
+  }
+
   return (
     <Card>
       <h3 style={{ fontWeight: 'bolder' }}>高级检索</h3>
       <div style={{ padding: '30px', background: '#E7E6E6' }}>
         <p>检索表达式：</p>
-        <TextArea rows={6} style={{ width: '60%' }} />
+        <TextArea rows={6} style={{ width: '60%' }} value={value} onChange={e => setValue(e?.target?.value)} />
         <div style={{ textAlign: 'right', marginTop: '10px' }}>
-          <Button type="primary" style={{ width: '200px', marginRight: '250Px' }}>检索</Button>
+          <Button type="primary" style={{ width: '200px', marginRight: '250Px' }} onClick={() => handleSearch()}>检索</Button>
         </div>
         <Divider style={{ background: '#BBBB' }} />
         <p>使用方法：</p>
@@ -29,4 +38,4 @@ const ServiceCompontent = (props) => {
 ServiceCompontent.propTypes = {
 };
 
-export default ServiceCompontent;
+export default connect()(ServiceCompontent);
