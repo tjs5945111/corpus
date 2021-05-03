@@ -13,6 +13,7 @@
     "echarts": "^5.1.0",
     "echarts-for-react": "^3.0.1",
     "minapp-sdk": "^3.20.1",
+    "moment": "^2.29.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },

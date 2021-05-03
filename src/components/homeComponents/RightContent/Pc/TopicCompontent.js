@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { connect } from 'dva';
+import moment from 'moment';
 import { Card, Table, Button, Icon, Input, Select } from 'antd';
 import styles from './system.less';
 
@@ -27,6 +28,8 @@ const columns = [
   {
     title: '发布时间',
     dataIndex: 'created_at',
+    // render: text => <>{text && moment(text).format('YYYY-MM-DD HH:mm:ss')}</>,
+    render: text => <>{text && moment(text).format('YYYY-MM-DD')}</>,
     sorter: (a, b) => a.age - b.age,
   },
   {
@@ -77,7 +80,7 @@ const TopicCompontent = (props) => {
             <div>数据来源：语音语料总库</div>
             <div>检索条件：{
               Object.keys(qureyParams).map(item => {
-                return item ? <div style={{ marginRigh: '10px' }}>{qureyParams[item]}</div> : null
+                return item ? <span>{qureyParams[item]}</span> : null
               })
             }</div>
           </div>
