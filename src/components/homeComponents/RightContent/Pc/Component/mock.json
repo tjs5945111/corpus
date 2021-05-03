@@ -2,12 +2,12 @@
   "type": "force",
   "categories": [
       {
-          "name": "原始文献",
+          "name": "参考文献",
           "keyword": {},
-          "base": "原始文献"
+          "base": "参考文献"
       },
       {
-          "name": "参考文献",
+          "name": "原始文献",
           "keyword": {},
           "base": "WebGLRenderingContext"
       },

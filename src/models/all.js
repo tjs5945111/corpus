@@ -59,13 +59,13 @@ export default {
     },
     * getChartData({ payload }, { call, put }) {
       // 实例化查询对象
-      // debugger;
-      let query = new BaaS.Query();
+      debugger;
+      // let query = new BaaS.Query();
       //  // 字符串是否包含
       //  payload[item] && query.contains(item, payload[item]);
-      let Product = new BaaS.TableObject('allChartData');
       const temp = {};
       for (const item of Object.keys(payload)) {
+        let query = new BaaS.Query();
         query.contains('type', item);
         const params = { tableName: 'allChartData', query }
         const res = yield call(queryAll, params);
@@ -73,8 +73,8 @@ export default {
         temp[item] = {};
         temp[item].lineData = res?.data?.data?.objects[0]?.lineData;
         temp[item].relationData = res?.data?.data?.objects[0]?.relationData;
-        yield put({ type: 'setup', payload: { allChartData: temp } });
       }
+      yield put({ type: 'setup', payload: { allChartData: temp } });
     },
   },
 
