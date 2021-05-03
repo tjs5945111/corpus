@@ -91,8 +91,8 @@ const TopicCompontent = (props) => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
           <h3 style={{ margin: 0, fontWeight: 'bolder' }}>语音语料列表</h3>
           <div>
-            <Button type='primary'>批量下载</Button>
-            <Button type='primary' style={{ marginLeft: '10px' }}>可视化分析</Button>
+            {/* <Button type='primary'>批量下载</Button> */}
+            <Button type='primary' style={{ marginLeft: '10px' }}><a href="./#/pc/source/datacontent">可视化分析</a></Button>
           </div>
         </div>
         <Table rowSelection={rowSelection} columns={columns} dataSource={qureyData} />
