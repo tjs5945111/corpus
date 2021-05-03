@@ -140,6 +140,32 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
 
           </div>
         </Card>
+        <Card style={{ marginBottom: "20px" }}>
+          <h3>形式检索</h3>
+          <Divider />
+          <div style={{ display: 'flex', flexWrap: "wrap" }}>
+            <Form.Item label='形式'>
+              {getFieldDecorator('type', {
+                rules: [{ required: false, message: '请输入!' }],
+              })(
+                <Select placeholder="请选择">
+                  <Option value='text'>文本朗读</Option>
+                  <Option value='cartoon'>卡通</Option>
+                  <Option value='speech'>演讲</Option>
+                  <Option value='talk'>报告</Option>
+                </Select>
+              )}
+            </Form.Item>
+            <Form.Item label='时间范围'>
+              {getFieldDecorator('time', {
+                rules: [{ required: false, message: '请输入!' }],
+              })(
+                <RangePicker > </RangePicker>,
+              )}
+            </Form.Item>
+
+          </div>
+        </Card>
 
         <Card style={{ marginBottom: "20px" }}>
           <h3>语音内容</h3>
@@ -243,38 +269,6 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
           </div>
         </Card>
 
-        <Card style={{ marginBottom: "20px" }}>
-          <h3>形式检索</h3>
-          <Divider />
-          <div style={{ display: 'flex', flexWrap: "wrap" }}>
-            <Form.Item label='形式'>
-              {getFieldDecorator('type', {
-                rules: [{ required: false, message: '请输入!' }],
-              })(
-                <Select
-                  mode="multiple"
-                  style={{ width: '100%' }}
-                  placeholder="请选择，可多选。"
-                // defaultValue={['a10', 'c12']}
-                // onChange={handleChange}
-                >
-                  <Option value='text_material'>文本</Option>
-                  <Option value='cartoon_material'>配音</Option>
-                  <Option value='speech_material'>演讲</Option>
-                  <Option value='talk_material'>话题</Option>
-                </Select>,
-              )}
-            </Form.Item>
-            <Form.Item label='时间范围'>
-              {getFieldDecorator('time', {
-                rules: [{ required: false, message: '请输入!' }],
-              })(
-                <RangePicker > </RangePicker>,
-              )}
-            </Form.Item>
-
-          </div>
-        </Card>
         <Card className={styles.search}>
           <Form.Item style={{ width: '100%' }}>
             <Button className={styles.button} onClick={() => resetFields()}>

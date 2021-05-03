@@ -1,50 +1,38 @@
 
 import React from 'react';
+import { connect } from 'dva';
 import { Card, Table, Button, Icon, Input, Select } from 'antd';
 import styles from './system.less';
 
 const columns = [
   {
-    title: 'Name',
+    title: '题名',
     dataIndex: 'name',
-    render: text => <a>{text}</a>,
+    // render: text => <a>{text}</a>,
     sorter: (a, b) => a.age - b.age,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
+    title: '试听',
+    dataIndex: 'view',
+    render: text => <audio src={text} controls="controls">
+      暂不支持 </audio>,
+  },
+  {
+    title: '文本',
+    dataIndex: 'value',
+    width: 300,
+    ellipsis: true,
     sorter: (a, b) => a.age - b.age,
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
+    title: '发布时间',
+    dataIndex: 'created_at',
     sorter: (a, b) => a.age - b.age,
   },
-];
-const data = [
   {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Disabled User',
-    age: 99,
-    address: 'Sidney No. 1 Lake Park',
+    title: '下载量',
+    dataIndex: 'download',
+    sorter: (a, b) => a.age - b.age,
   },
 ];
 const InputGroup = Input.Group;
@@ -61,6 +49,7 @@ const TopicCompontent = (props) => {
       name: record.name,
     }),
   };
+  const { qureyParams = {}, qureyData = [] } = props;
   return (
     <div style={{ height: '100%' }} className={styles.listCont}>
       <Card style={{ marginBottom: '15px' }}>
@@ -85,8 +74,12 @@ const TopicCompontent = (props) => {
         <div style={{ display: 'flex', alignItems: "center" }}>
           <Icon type="exclamation-circle" style={{ color: "#40a9ff", marginRight: '10px' }} />
           <div>
-            <div>数据来源：</div>
-            <div>检索条件：</div>
+            <div>数据来源：语音语料总库</div>
+            <div>检索条件：{
+              Object.keys(qureyParams).map(item => {
+                return item ? <div style={{ marginRigh: '10px' }}>{qureyParams[item]}</div> : null
+              })
+            }</div>
           </div>
         </div>
 
@@ -99,13 +92,15 @@ const TopicCompontent = (props) => {
             <Button type='primary' style={{ marginLeft: '10px' }}>可视化分析</Button>
           </div>
         </div>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <Table rowSelection={rowSelection} columns={columns} dataSource={qureyData} />
       </Card>
     </div>
   );
 };
 
-TopicCompontent.propTypes = {
-};
-
-export default TopicCompontent;
+function mapStateToProps(state) {
+  return {
+    ...state.all,
+  };
+}
+export default connect(mapStateToProps)(TopicCompontent);

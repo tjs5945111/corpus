@@ -18,7 +18,7 @@ const PcLeftMenu = (props) => {
             <Menu
                 theme="dark"
                 mode="inline"
-                defaultSelectedKeys={[urlParams?.hash]}
+                selectedKeys={[urlParams?.hash]}
                 defaultOpenKeys={['search', 'list']}
                 onClick={(e) => onClick("e.key")}
             //  onOpenChange={this.openChange.bind(this)}
