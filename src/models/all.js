@@ -29,6 +29,9 @@ export default {
       c: '完成度',
       d: '语调',
       e: '高音',
+    },
+    allChartData: {
+
     }
   },
 
@@ -52,6 +55,25 @@ export default {
       if (result?.data?.status === 200) {
         yield put({ type: 'setup', payload: { qureyData: result?.data?.data?.objects, qureyParams: payload } });
         yield put(routerRedux.push('/pc/source/topic'));
+      }
+    },
+    * getChartData({ payload }, { call, put }) {
+      // 实例化查询对象
+      // debugger;
+      let query = new BaaS.Query();
+      //  // 字符串是否包含
+      //  payload[item] && query.contains(item, payload[item]);
+      let Product = new BaaS.TableObject('allChartData');
+      const temp = {};
+      for (const item of Object.keys(payload)) {
+        query.contains('type', item);
+        const params = { tableName: 'allChartData', query }
+        const res = yield call(queryAll, params);
+        // debugger
+        temp[item] = {};
+        temp[item].lineData = res?.data?.data?.objects[0]?.lineData;
+        temp[item].relationData = res?.data?.data?.objects[0]?.relationData;
+        yield put({ type: 'setup', payload: { allChartData: temp } });
       }
     },
   },

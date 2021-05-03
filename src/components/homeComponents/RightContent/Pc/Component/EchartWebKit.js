@@ -23,7 +23,7 @@ class EchartWebKit extends Component {
 
     return {
       legend: {
-        data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+        data: ['原始文献', '参考文献', '引用文献', '其他']
       },
       series: [{
         type: 'graph',
@@ -34,17 +34,17 @@ class EchartWebKit extends Component {
           formatter: '{b}'
         },
         draggable: true,
-        data: webkitDep.nodes.map(function (node, idx) {
+        data: webkitDep?.nodes?.map(function (node, idx) {
           node.id = idx;
           return node;
         }),
-        categories: webkitDep.categories,
+        categories: webkitDep?.categories,
         force: {
           edgeLength: 5,
           repulsion: 20,
           gravity: 0.2
         },
-        edges: webkitDep.links
+        edges: webkitDep?.links
       }]
     }
   };

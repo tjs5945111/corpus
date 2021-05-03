@@ -80,7 +80,7 @@ const TopicCompontent = (props) => {
             <div>数据来源：语音语料总库</div>
             <div>检索条件：{
               Object.keys(qureyParams).map(item => {
-                return qureyParams[item] ? <span style={{ marginRight: '15px' }}>{allObj[item]}：{qureyParams[item]}</span> : null
+                return qureyParams[item] ? <span key={item} style={{ marginRight: '15px' }}>{allObj[item]}：{qureyParams[item]}</span> : null
               })
             }</div>
           </div>
@@ -95,7 +95,7 @@ const TopicCompontent = (props) => {
             <Button type='primary' style={{ marginLeft: '10px' }}><a href="./#/pc/source/datacontent">可视化分析</a></Button>
           </div>
         </div>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={qureyData} />
+        <Table rowSelection={rowSelection} columns={columns} dataSource={qureyData} rowKey={(_, index) => index} />
       </Card>
     </div>
   );

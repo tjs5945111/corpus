@@ -2,27 +2,22 @@
   "type": "force",
   "categories": [
       {
-          "name": "HTMLElement",
+          "name": "原始文献",
           "keyword": {},
-          "base": "HTMLElement"
+          "base": "原始文献"
       },
       {
-          "name": "WebGL",
+          "name": "参考文献",
           "keyword": {},
           "base": "WebGLRenderingContext"
       },
       {
-          "name": "SVG",
+          "name": "引用文献",
           "keyword": {},
           "base": "SVGElement"
       },
       {
-          "name": "CSS",
-          "keyword": {},
-          "base": "CSSRule"
-      },
-      {
-          "name": "Other",
+          "name": "其他",
           "keyword": {}
       }
   ],
@@ -298,64 +293,9 @@
           "category": 4
       },
       {
-          "name": "CSSCharsetRule",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSRule",
-          "value": 3,
-          "category": 3
-      },
-      {
-          "name": "CSSFontFaceRule",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSStyleDeclaration",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSImportRule",
-          "value": 1,
-          "category": 3
-      },
-      {
           "name": "MediaList",
           "value": 1,
           "category": 4
-      },
-      {
-          "name": "CSSStyleSheet",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSMediaRule",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSRuleList",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSPageRule",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSPrimitiveValue",
-          "value": 1,
-          "category": 3
-      },
-      {
-          "name": "CSSValue",
-          "value": 1,
-          "category": 3
       },
       {
           "name": "Counter",
@@ -713,7 +653,7 @@
           "category": 0
       },
       {
-          "name": "HTMLElement",
+          "name": "原始文献",
           "value": 3,
           "category": 0
       },
