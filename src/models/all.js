@@ -9,6 +9,27 @@ export default {
   state: {
     qureyParams: {},
     qureyData: [],
+    allObj: {
+      language: '母语',
+      country: '国家地区',
+      hskLevel: 'HSK水平',
+      languageFamily: '语种',
+      chineseOrigin_generation: '是否为华裔',
+      chineseLearning: '是否学习过汉语',
+      gender: '性别',
+      method: '汉语学习方式',
+      age: '年龄',
+      chineseOrigin_generation: '其他外语及程度',
+      type: '形式',
+      content: '内容',
+      material: '主题',
+      languages: '语言要素',
+      a: '流畅度',
+      b: '精准度',
+      c: '完成度',
+      d: '语调',
+      e: '高音',
+    }
   },
 
   subscriptions: {

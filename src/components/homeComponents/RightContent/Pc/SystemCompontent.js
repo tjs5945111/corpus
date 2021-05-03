@@ -99,15 +99,6 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
               )}
             </Form.Item>
 
-            <Form.Item label='是否学习过汉语'>
-              {getFieldDecorator('chineseLearning', {
-                rules: [{ required: false, message: '请输入!' }],
-              })(
-                <Input
-                  placeholder="请输入"
-                />,
-              )}
-            </Form.Item>
             <Form.Item label='汉语学习方式'>
               {getFieldDecorator('method', {
                 rules: [{ required: false, message: '请输入!' }],
@@ -117,8 +108,8 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
                 />,
               )}
             </Form.Item>
-            <Form.Item label='年龄'>
-              {getFieldDecorator('age', {
+            <Form.Item label='其他外语及程度'>
+              {getFieldDecorator('chineseOrigin_generation', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
@@ -126,10 +117,8 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
                 />,
               )}
             </Form.Item>
-
-
-            <Form.Item label='其他外语及程度'>
-              {getFieldDecorator('chineseOrigin_generation', {
+            <Form.Item label='年龄'>
+              {getFieldDecorator('age', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
@@ -149,10 +138,10 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
-                  <Option value='text'>文本朗读</Option>
-                  <Option value='cartoon'>卡通</Option>
-                  <Option value='speech'>演讲</Option>
-                  <Option value='talk'>报告</Option>
+                  <Option value='文本朗读'>文本朗读</Option>
+                  <Option value='卡通'>卡通</Option>
+                  <Option value='演讲'>演讲</Option>
+                  <Option value='报告'>报告</Option>
                 </Select>
               )}
             </Form.Item>
@@ -176,7 +165,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
-                  <Option value='text_material'>文本朗读</Option>
+                  <Option value='文本朗读'>文本朗读</Option>
                   {/* <Option value='cartoon_material'>卡通</Option>
                   <Option value='speech_material'>演讲</Option>
                   <Option value='talk_material'>报告</Option> */}
@@ -188,10 +177,10 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
-                  <Option value='text_material'>文本朗读</Option>
-                  <Option value='cartoon_material'>卡通</Option>
-                  <Option value='speech_material'>演讲</Option>
-                  <Option value='talk_material'>报告</Option>
+                  <Option value='文本朗读'>文本朗读</Option>
+                  <Option value='卡通'>卡通</Option>
+                  <Option value='演讲'>演讲</Option>
+                  <Option value='报告'>报告</Option>
                 </Select>
               )}
             </Form.Item>
@@ -248,7 +237,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='语调'>
-              {getFieldDecorator('c', {
+              {getFieldDecorator('d', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber
@@ -257,7 +246,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
               )}
             </Form.Item>
             <Form.Item label='高音'>
-              {getFieldDecorator('d', {
+              {getFieldDecorator('fe', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <InputNumber

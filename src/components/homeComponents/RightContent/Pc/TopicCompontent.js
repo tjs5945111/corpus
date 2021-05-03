@@ -52,7 +52,7 @@ const TopicCompontent = (props) => {
       name: record.name,
     }),
   };
-  const { qureyParams = {}, qureyData = [] } = props;
+  const { qureyParams = {}, qureyData = [], allObj = {} } = props;
   return (
     <div style={{ height: '100%' }} className={styles.listCont}>
       <Card style={{ marginBottom: '15px' }}>
@@ -80,7 +80,7 @@ const TopicCompontent = (props) => {
             <div>数据来源：语音语料总库</div>
             <div>检索条件：{
               Object.keys(qureyParams).map(item => {
-                return item ? <span>{qureyParams[item]}</span> : null
+                return qureyParams[item] ? <span style={{ marginRight: '15px' }}>{allObj[item]}：{qureyParams[item]}</span> : null
               })
             }</div>
           </div>
