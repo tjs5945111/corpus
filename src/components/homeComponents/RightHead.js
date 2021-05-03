@@ -24,7 +24,7 @@ const RightHead = (props) => {
             <Menu theme='light'
                 mode='horizontal'
                 //默认选中状态
-                defaultSelectedKeys={keyss}
+                defaultSelectedKeys={[keyss]}
                 //子组件向父组件传参（通过父组件定义事件传递）
                 onClick={(e) => clickTab(e.key)}
                 style={{ position: "relative", top: "-56px", width: "950px", left: "30px" }}

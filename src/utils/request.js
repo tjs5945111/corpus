@@ -39,7 +39,7 @@ export default function baseQuest(params) {
   let Product = new BaaS.TableObject(tableName);
   return Product.setQuery(params.query).find()
     .then(checkStatus)
-    .then(parseJSON)
+    // .then(parseJSON)
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }

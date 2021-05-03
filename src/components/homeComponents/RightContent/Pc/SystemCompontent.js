@@ -18,7 +18,6 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
     validateFields((err, values) => {
       console.log(err)
       if (!err) {
-        debugger
         dispatch({
           type: 'all/mainSearch',
           payload: values
@@ -81,7 +80,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
               )}
             </Form.Item>
             <Form.Item label='是否学习过汉语'>
-              {getFieldDecorator(' chineseLearning', {
+              {getFieldDecorator('chineseLearning', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
@@ -101,7 +100,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
             </Form.Item>
 
             <Form.Item label='是否学习过汉语'>
-              {getFieldDecorator(' chineseLearning', {
+              {getFieldDecorator('chineseLearning', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
@@ -110,7 +109,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
               )}
             </Form.Item>
             <Form.Item label='汉语学习方式'>
-              {getFieldDecorator(' method', {
+              {getFieldDecorator('method', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
@@ -130,7 +129,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
 
 
             <Form.Item label='其他外语及程度'>
-              {getFieldDecorator(' chineseOrigin_generation', {
+              {getFieldDecorator('chineseOrigin_generation', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Input
