@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
-import { Card, Table, Button, Icon, Input, Select } from 'antd';
+import { Card, Table, Button, Icon, Input, Select, message } from 'antd';
 import styles from './system.less';
 
 const columns = [
@@ -43,15 +43,24 @@ const { Search } = Input;
 const { Option } = Select;
 
 const TopicCompontent = (props) => {
-  // const [value, setValue] = useState('');
+  const [selectedRows, setSelectedRows] = useState([]);
   function handleSearch(e) {
     e && props.dispatch({
       type: 'all/mainSearch',
       payload: { value: e }
     })
   }
+  function handleSee() {
+    // debugger
+    if (selectedRows.length) {
+      props.history.push('/pc/source/datacontent');
+    } else {
+      message.error('请先选择数据！')
+    }
+  }
   const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
+      setSelectedRows(selectedRows);
       console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
     },
     getCheckboxProps: record => ({
@@ -101,7 +110,7 @@ const TopicCompontent = (props) => {
           <h3 style={{ margin: 0, fontWeight: 'bolder' }}>语音语料列表</h3>
           <div>
             {/* <Button type='primary'>批量下载</Button> */}
-            <Button type='primary' style={{ marginLeft: '10px' }}><a href="./#/pc/source/datacontent">可视化分析</a></Button>
+            <Button type='primary' style={{ marginLeft: '10px' }} onClick={() => handleSee()}>可视化分析</Button>
           </div>
         </div>
         <Table rowSelection={rowSelection} columns={columns} dataSource={qureyData} rowKey={(_, index) => index} />
