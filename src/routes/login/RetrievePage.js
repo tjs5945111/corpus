@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'dva';
+import BaaS from 'minapp-sdk';
 import { Link } from 'react-router-dom';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
 import titleImg from '../../assets/images/title.png';
 import styles from './RetrievePage.less';
 
@@ -17,13 +18,31 @@ function RetrievePage({ dispatch, form: { getFieldDecorator, validateFields }, h
           //   type: 'login/checkLogin',
           //   payload: values
           // })
+          // BaaS.auth.requestPasswordReset({ email: values.mail }).then(res => {
+          //   console.log(res);
+          //   setType('reset');
+          // }).catch(err => {
+          //   message.error('验证失败！');
+          //   // HError
+          // })
           setType('reset')
         } else {
           // dispatch({
           //   type: 'login/register',
           //   payload: values
           // })
-          history.push('/')
+          BaaS.auth.getCurrentUser()
+            .then(user => {
+              return user.updatePassword(values)
+            }).then(user => {
+              console.log(user);
+              message.success('修改成功！');
+              BaaS.auth.logout();
+              history.push('/');
+            }).catch(err => {
+              message.error('修改失败！');
+              // HError
+            })
         }
 
       }
@@ -39,17 +58,17 @@ function RetrievePage({ dispatch, form: { getFieldDecorator, validateFields }, h
             <div className={styles.line}></div>
             <Form onSubmit={handleSubmit} className="login-form">
               <Form.Item>
-                {getFieldDecorator('username', {
-                  rules: [{ required: true, message: '请输入手机号/邮箱' }],
+                {getFieldDecorator('mail', {
+                  rules: [{ required: true, message: '请输入邮箱' }],
                 })(
                   <Input
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    placeholder="请输入手机号/邮箱"
+                    placeholder="请输入邮箱"
                     size="small"
                   />,
                 )}
               </Form.Item>
-              <Form.Item>
+              {/* <Form.Item>
                 {getFieldDecorator('password', {
                   rules: [{ required: true, message: '请输入验证码!' }],
                 })(
@@ -64,7 +83,7 @@ function RetrievePage({ dispatch, form: { getFieldDecorator, validateFields }, h
                     </Button>
                   </div>
                 )}
-              </Form.Item>
+              </Form.Item> */}
               <Form.Item>
                 <Button type="primary" htmlType="submit" className={styles.loginformbutton}>
                   下一步
@@ -81,23 +100,23 @@ function RetrievePage({ dispatch, form: { getFieldDecorator, validateFields }, h
               <Form onSubmit={handleSubmit} className="login-form">
                 <Form.Item >
                   {getFieldDecorator('password', {
-                    rules: [{ required: true, message: '请输入密码!' }],
+                    rules: [{ required: true, message: '请输入原始密码!' }],
                   })(
                     <Input.Password
                       prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                       type="password"
-                      placeholder="请输入密码"
+                      placeholder="请输入原始密码"
                     />,
                   )}
                 </Form.Item>
                 <Form.Item >
-                  {getFieldDecorator('confirm', {
-                    rules: [{ required: true, message: '请确认密码!' }],
+                  {getFieldDecorator('newPassword', {
+                    rules: [{ required: true, message: '请输入新密码!' }],
                   })(
                     <Input.Password
                       prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                       type="password"
-                      placeholder="请确认密码"
+                      placeholder="请确认输入新密码"
                     />,
                   )}
                 </Form.Item>
