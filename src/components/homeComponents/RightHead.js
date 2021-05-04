@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'dva';
 import { Layout, Icon, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import back from '../../assets/images/back.svg'
 
 const { Header } = Layout;
 const RightHead = (props) => {
-    const { collapsed, onCollapse, keyss, clickTab } = props
+    const { collapsed, onCollapse, keyss, clickTab, userName } = props
     // console.log(collapsed)
     // console.log(keyss)
     return (
@@ -19,7 +20,7 @@ const RightHead = (props) => {
                 <Link to='/'><img style={{ cursor: "pointer", width: '1.7rem' }} alt="退出" src={back} /></Link>
             </div>
             <div style={{ lineHeight: "56px", float: 'right', marginRight: 15 }}>
-                <span><Icon type='user' />&nbsp;未登录</span>
+                <span><Icon type='user' />&nbsp;{userName}</span>
             </div>
             <Menu theme='light'
                 mode='horizontal'
@@ -39,7 +40,10 @@ const RightHead = (props) => {
 
 };
 
-RightHead.propTypes = {
-};
+function mapStateToProps(state) {
+    return {
+        ...state.login,
+    };
+}
 
-export default RightHead;
+export default connect(mapStateToProps)(RightHead);

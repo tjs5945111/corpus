@@ -43,3 +43,32 @@ export default function baseQuest(params) {
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }
+
+export function setBaseQuest(params) {
+  const { tableName } = params;
+  // let query = new BaaS.Query()
+  // 应用查询对象
+  let Product = new BaaS.TableObject(tableName);
+  let product = Product.create();
+  return product.set(params.addData).save()
+    .then(checkStatus)
+    // .then(parseJSON)
+    .then(data => ({ data }))
+    .catch(err => ({ err }));
+}
+
+export function loginReq(params) {
+  return BaaS.auth.login(params)
+    // .then(checkStatus)
+    // .then(parseJSON)
+    .then(data => ({ data }))
+    .catch(err => ({ err }));
+}
+
+export function registerReq(params) {
+  return BaaS.auth.register(params)
+    // .then(checkStatus)
+    // .then(parseJSON)
+    .then(data => ({ data }))
+    .catch(err => ({ err }));
+}

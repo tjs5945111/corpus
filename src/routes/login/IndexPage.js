@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'dva';
 import { Link } from 'react-router-dom';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
 import titleImg from '../../assets/images/title.png';
 import styles from './IndexPage.less';
 
@@ -18,11 +18,22 @@ function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
             payload: values
           })
         } else {
-          // dispatch({
-          //   type: 'login/register',
-          //   payload: values
-          // })
-          setType('login')
+          if (values.confirm !== values.password) {
+            message.error('您输入的两次密码不一致，请核对！');
+            return;
+          }
+          dispatch({
+            type: 'login/register',
+            payload: values,
+            callback: (res) => {
+              debugger
+              if (res?.data) {
+                setType('login');
+                console.log(res);// 请求完成后返回的结果
+              }
+            }
+          })
+          // setType('login')
         }
 
       }
@@ -95,7 +106,7 @@ function IndexPage({ dispatch, form: { getFieldDecorator, validateFields } }) {
                   )}
                 </Form.Item>
                 <Form.Item>
-                  {getFieldDecorator('username', {
+                  {getFieldDecorator('mail', {
                     rules: [{ required: true, message: '请输入邮箱!' }],
                   })(
                     <Input

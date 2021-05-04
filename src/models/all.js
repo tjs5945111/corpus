@@ -59,7 +59,7 @@ export default {
     },
     * getChartData({ payload }, { call, put }) {
       // 实例化查询对象
-      debugger;
+      // debugger;
       // let query = new BaaS.Query();
       //  // 字符串是否包含
       //  payload[item] && query.contains(item, payload[item]);

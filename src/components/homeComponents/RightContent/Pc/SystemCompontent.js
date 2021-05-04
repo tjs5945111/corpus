@@ -92,7 +92,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
               {getFieldDecorator('gender', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
-                <Select placeholder="请选择！">
+                <Select placeholder="请选择">
                   <Option value='男'>男</Option>
                   <Option value='女'>女</Option>
                 </Select>
