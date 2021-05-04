@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'dva';
 import { Card, List, Icon, Divider, Checkbox, Empty } from 'antd';
 import EchartsLin from './Component/EchartsLin'
@@ -10,6 +10,13 @@ const backData = [{ cleanAmount: 1, date: '2012-1-1' }, { cleanAmount: 2, date: 
 
 const DataContentCompontent = (props) => {
   const [checkeddData, setCheckeddData] = useState(props.qureyParams);
+  useEffect(() => {
+    props.dispatch({
+      type: 'all/getChartData',
+      payload: checkeddData
+    })
+  }, [checkeddData]);
+
   function onChange(e, item) {
     console.log(`checked = ${e.target.checked}`);
     checkeddData[item] = e.target.checked;
