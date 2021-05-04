@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
 import { Card, Table, Button, Icon, Input, Select } from 'antd';
@@ -43,6 +43,13 @@ const { Search } = Input;
 const { Option } = Select;
 
 const TopicCompontent = (props) => {
+  // const [value, setValue] = useState('');
+  function handleSearch(e) {
+    e && props.dispatch({
+      type: 'all/mainSearch',
+      payload: { value: e }
+    })
+  }
   const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
       console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -64,14 +71,16 @@ const TopicCompontent = (props) => {
             </Select>
             <div>
               <Search
-                placeholder="input search text"
+                placeholder="请输入关键字检索"
                 style={{ widt: '200px' }}
                 enterButton="检索"
-                onSearch={value => console.log(value)}
+                onSearch={value => handleSearch(value)}
               ></Search>
             </div>
           </InputGroup>
-          <Button style={{ marginLeft: '10PX' }}>高级检索</Button>
+          <a href="./#/pc/source/service">
+            <Button style={{ marginLeft: '10PX' }}>高级检索</Button>
+          </a>
         </div>
 
         <div style={{ display: 'flex', alignItems: "center" }}>

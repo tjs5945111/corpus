@@ -21,7 +21,7 @@ export default {
       age: '年龄',
       chineseOrigin_generation: '其他外语及程度',
       type: '形式',
-      content: '内容',
+      value: '内容',
       material: '主题',
       languages: '语言要素',
       a: '流畅度',

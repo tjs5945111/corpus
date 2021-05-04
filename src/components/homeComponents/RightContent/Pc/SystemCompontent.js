@@ -161,7 +161,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
             <Form.Item label='内容'>
-              {getFieldDecorator('content', {
+              {getFieldDecorator('value', {
                 rules: [{ required: false, message: '请输入!' }],
               })(
                 <Select placeholder="请选择">
