@@ -29,7 +29,7 @@ const TopicCompontent = (props) => {
       title: '文本',
       dataIndex: 'value',
       ellipsis: true,
-      render: text => <div style={{ whiteSpace: 'nowrap', width: '200px', overflow: 'hidden', textOverflow: 'ellipsis' }}>{text}</div>,
+      render: text => <div style={{ whiteSpace: 'nowrap', width: '200px', overflow: 'hidden', textOverflow: 'ellipsis' }} title={text}>{text}</div>,
       // sorter: (a, b) => a.age - b.age,
     },
     {
