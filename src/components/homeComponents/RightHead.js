@@ -31,7 +31,7 @@ const RightHead = (props) => {
                 style={{ position: "relative", top: "-56px", width: "950px", left: "30px" }}
             >
                 <Menu.Item key='pc'>
-                    <Icon type='home' /><span>洋腔洋调语音预料库</span>
+                    <Icon type='home' /><span>洋腔洋调语音语料库</span>
                 </Menu.Item>
             </Menu>
         </Header>

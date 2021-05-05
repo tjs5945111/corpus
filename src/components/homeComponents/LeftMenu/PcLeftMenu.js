@@ -14,7 +14,7 @@ const PcLeftMenu = (props) => {
     const urlParams = new URL(window.location.href);
     return (
         <Sider trigger={null} collapsible collapsed={collapsed} style={{ minHeight: '100vh' }} >
-            <div style={{ color: '#fff', textAlign: 'center', padding: "3px", fontSize: "18px" }} >{collapsed ? '' : "语音预料系统"}</div>
+            <div style={{ color: '#fff', textAlign: 'center', padding: "3px", fontSize: "18px" }} >{collapsed ? '' : "语音语料系统"}</div>
             <Menu
                 theme="dark"
                 mode="inline"

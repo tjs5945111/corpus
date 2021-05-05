@@ -4,45 +4,55 @@ import { connect } from 'dva';
 import moment from 'moment';
 import { Card, Table, Button, Icon, Input, Select, message } from 'antd';
 import styles from './system.less';
+import { downloadMp3 } from '../../../../utils/request'
 
-const columns = [
-  {
-    title: '题名',
-    dataIndex: 'name',
-    // render: text => <a>{text}</a>,
-    sorter: (a, b) => a.age - b.age,
-  },
-  {
-    title: '试听',
-    dataIndex: 'view',
-    render: text => <audio src={text} controls="controls">
-      暂不支持 </audio>,
-  },
-  {
-    title: '文本',
-    dataIndex: 'value',
-    width: 300,
-    ellipsis: true,
-    sorter: (a, b) => a.age - b.age,
-  },
-  {
-    title: '发布时间',
-    dataIndex: 'created_at',
-    // render: text => <>{text && moment(text).format('YYYY-MM-DD HH:mm:ss')}</>,
-    render: text => <>{text && moment(text).format('YYYY-MM-DD')}</>,
-    sorter: (a, b) => a.age - b.age,
-  },
-  {
-    title: '下载量',
-    dataIndex: 'download',
-    sorter: (a, b) => a.age - b.age,
-  },
-];
+
 const InputGroup = Input.Group;
 const { Search } = Input;
 const { Option } = Select;
 
 const TopicCompontent = (props) => {
+  const columns = [
+    {
+      title: '题名',
+      dataIndex: 'name',
+      // render: text => <a>{text}</a>,
+      sorter: (a, b) => a.age - b.age,
+    },
+    {
+      title: '试听',
+      dataIndex: 'view',
+      render: text => <audio src={text} controls="controls">
+        暂不支持 </audio>,
+    },
+    {
+      title: '文本',
+      dataIndex: 'value',
+      ellipsis: true,
+      render: text => <div style={{ whiteSpace: 'nowrap', width: '200px', overflow: 'hidden', textOverflow: 'ellipsis' }}>{text}</div>,
+      // sorter: (a, b) => a.age - b.age,
+    },
+    {
+      title: '发布时间',
+      dataIndex: 'created_at',
+      // render: text => <>{text && moment(text).format('YYYY-MM-DD HH:mm:ss')}</>,
+      render: text => <>{text && moment(text).format('YYYY-MM-DD')}</>,
+      sorter: (a, b) => a.age - b.age,
+    },
+    // {
+    //   title: '下载量',
+    //   dataIndex: 'download',
+    //   sorter: (a, b) => a.age - b.age,
+    // },
+    {
+      title: '操作',
+      dataIndex: 'action',
+      align: 'cneter',
+      render: (text, data) => <div>
+        <Icon type="download" onClick={() => download(data)} />
+      </div>,
+    },
+  ];
   const [selectedRows, setSelectedRows] = useState([]);
   function handleSearch(e) {
     e && props.dispatch({
@@ -56,6 +66,26 @@ const TopicCompontent = (props) => {
       props.history.push('/pc/source/datacontent');
     } else {
       message.error('请先选择数据！')
+    }
+  }
+  function download(ele) {
+    // debugger
+    ele.view && downloadMp3(ele.view, ele.name);
+    // if (selectedRows.length) {
+    //   props.history.push('/pc/source/datacontent');
+    // } else {
+    //   message.error('请先选择数据！')
+    // }
+  }
+  function handleDownload() {
+    // debugger
+    if (selectedRows.length) {
+      selectedRows.forEach(ele => {
+        // debugger
+        ele.view && downloadMp3(ele.view, ele.name);
+      });
+    } else {
+      message.error('请先选择数据！');
     }
   }
   const rowSelection = {
@@ -109,7 +139,7 @@ const TopicCompontent = (props) => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
           <h3 style={{ margin: 0, fontWeight: 'bolder' }}>语音语料列表</h3>
           <div>
-            {/* <Button type='primary'>批量下载</Button> */}
+            <Button type='primary' onClick={() => handleDownload()}>批量下载</Button>
             <Button type='primary' style={{ marginLeft: '10px' }} onClick={() => handleSee()}>可视化分析</Button>
           </div>
         </div>
