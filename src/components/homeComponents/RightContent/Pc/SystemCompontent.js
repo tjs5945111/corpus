@@ -197,7 +197,7 @@ const SystemCompontent = ({ dispatch, form: { getFieldDecorator, validateFields,
 
           </div>
         </Card>
-        <Card style={{ marginBottom: "20px" }}>
+        <Card style={{ marginBottom: "40px" }}>
           <h3>评测指标</h3>
           <Divider />
           <div style={{ display: 'flex', flexWrap: "wrap" }}>
