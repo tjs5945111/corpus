@@ -16,7 +16,7 @@ const TopicCompontent = (props) => {
     {
       title: '题名',
       dataIndex: 'name',
-      // render: text => <a>{text}</a>,
+      render: text => <>{text||'--'}</>,
       sorter: (a, b) => a.age - b.age,
     },
     {
@@ -29,14 +29,14 @@ const TopicCompontent = (props) => {
       title: '文本',
       dataIndex: 'value',
       ellipsis: true,
-      render: text => <div style={{ whiteSpace: 'nowrap', width: '200px', overflow: 'hidden', textOverflow: 'ellipsis' }} title={text}>{text}</div>,
+      render: text => <div style={{ whiteSpace: 'nowrap', width: '200px', overflow: 'hidden', textOverflow: 'ellipsis' }} title={text}>{text||'--'}</div>,
       // sorter: (a, b) => a.age - b.age,
     },
     {
       title: '发布时间',
       dataIndex: 'created_at',
       // render: text => <>{text && moment(text).format('YYYY-MM-DD HH:mm:ss')}</>,
-      render: text => <>{text && moment(text).format('YYYY-MM-DD')}</>,
+      render: text => <>{text && moment(text && text * 1000).format('YYYY-MM-DD')}</>,
       sorter: (a, b) => a.age - b.age,
     },
     // {
